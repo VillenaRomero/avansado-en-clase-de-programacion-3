@@ -2,22 +2,18 @@ using UnityEngine;
 
 public class jugador : MonoBehaviour
 {
-    #region Private
-    private string name;
-    private string life;
-    #endregion
+    private string nombre;
+    private int fuerza;
+    private int defensa;
 
-    public string Name => name;
-    public string Life => life;
-    #region Constructors
+    public string Nombre => nombre;
+    public int Fuerza => fuerza;
+    public int Defensa => defensa;
 
-    public jugador(){
-        name = "null";
-        life = "null";
+    public jugador(string _nombre, int _fuerza, int _defensa)
+    {
+        nombre = _nombre;
+        fuerza = _fuerza;
+        defensa = _defensa;
     }
-    #endregion
-    public jugador(string _name, string _life) {
-      name= _name;
-      name= _life;
-    } 
 }

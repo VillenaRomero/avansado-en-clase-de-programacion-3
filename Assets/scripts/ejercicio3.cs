@@ -1,24 +1,18 @@
-using System.ComponentModel;
 using UnityEngine;
 
-public interface IDamage {
-    void Ira();
-}
-public class guerrero : MonoBehaviour, IDamage
+public class guerrero : jugador
 {
-    #region Private
+    private int ira;
 
-    private int life;
-    private int damage;
+    public int Ira => ira;
 
-    public int Life => life;
-    public int Damage => damage;
-    public guerrero(int _life, int _damage) { 
-    life=_life;
-    damage=_damage;
+    public guerrero(string _nombre, int _fuerza, int _defensa, int _ira) : base(_nombre, _fuerza, _defensa)
+    {
+        ira = _ira;
     }
-    public void Ira() {
-        print(name + " esta usando su ira preparate de puño poder ");
+
+    public void UsarIra()
+    {
+        Debug.Log(Nombre + " está usando su ira con poder de: " + ira);
     }
-    #endregion
 }
